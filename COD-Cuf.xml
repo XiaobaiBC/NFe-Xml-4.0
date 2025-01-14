@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BaseCodCuf>
+    <Item>
+        <UF>RO</UF>
+        <Unidade-da-Federação>Rondônia</Unidade-da-Federação>
+        <CodCuf>11</CodCuf>
+    </Item>
+    <Item>
+        <UF>AC</UF>
+        <Unidade-da-Federação>Acre</Unidade-da-Federação>
+        <CodCuf>12</CodCuf>
+    </Item>
+    <Item>
+        <UF>AM</UF>
+        <Unidade-da-Federação>Amazonas</Unidade-da-Federação>
+        <CodCuf>13</CodCuf>
+    </Item>
+    <Item>
+        <UF>RR</UF>
+        <Unidade-da-Federação>Roraima</Unidade-da-Federação>
+        <CodCuf>14</CodCuf>
+    </Item>
+    <Item>
+        <UF>PA</UF>
+        <Unidade-da-Federação>Pará</Unidade-da-Federação>
+        <CodCuf>15</CodCuf>
+    </Item>
+    <Item>
+        <UF>AP</UF>
+        <Unidade-da-Federação>Amapá</Unidade-da-Federação>
+        <CodCuf>16</CodCuf>
+    </Item>
+    <Item>
+        <UF>TO</UF>
+        <Unidade-da-Federação>Tocantins</Unidade-da-Federação>
+        <CodCuf>17</CodCuf>
+    </Item>
+    <Item>
+        <UF>MA</UF>
+        <Unidade-da-Federação>Maranhão</Unidade-da-Federação>
+        <CodCuf>21</CodCuf>
+    </Item>
+    <Item>
+        <UF>PI</UF>
+        <Unidade-da-Federação>Piauí</Unidade-da-Federação>
+        <CodCuf>22</CodCuf>
+    </Item>
+    <Item>
+        <UF>CE</UF>
+        <Unidade-da-Federação>Ceará</Unidade-da-Federação>
+        <CodCuf>23</CodCuf>
+    </Item>
+    <Item>
+        <UF>RN</UF>
+        <Unidade-da-Federação>Rio Grande do Norte</Unidade-da-Federação>
+        <CodCuf>24</CodCuf>
+    </Item>
+    <Item>
+        <UF>PB</UF>
+        <Unidade-da-Federação>Paraíba</Unidade-da-Federação>
+        <CodCuf>25</CodCuf>
+    </Item>
+    <Item>
+        <UF>PE</UF>
+        <Unidade-da-Federação>Pernambuco</Unidade-da-Federação>
+        <CodCuf>26</CodCuf>
+    </Item>
+    <Item>
+        <UF>AL</UF>
+        <Unidade-da-Federação>Alagoas</Unidade-da-Federação>
+        <CodCuf>27</CodCuf>
+    </Item>
+    <Item>
+        <UF>SE</UF>
+        <Unidade-da-Federação>Sergipe</Unidade-da-Federação>
+        <CodCuf>28</CodCuf>
+    </Item>
+    <Item>
+        <UF>BA</UF>
+        <Unidade-da-Federação>Bahia</Unidade-da-Federação>
+        <CodCuf>29</CodCuf>
+    </Item>
+    <Item>
+        <UF>MG</UF>
+        <Unidade-da-Federação>Minas Gerais</Unidade-da-Federação>
+        <CodCuf>31</CodCuf>
+    </Item>
+    <Item>
+        <UF>ES</UF>
+        <Unidade-da-Federação>Espírito Santo</Unidade-da-Federação>
+        <CodCuf>32</CodCuf>
+    </Item>
+    <Item>
+        <UF>RJ</UF>
+        <Unidade-da-Federação>Rio de Janeiro</Unidade-da-Federação>
+        <CodCuf>33</CodCuf>
+    </Item>
+    <Item>
+        <UF>SP</UF>
+        <Unidade-da-Federação>São Paulo</Unidade-da-Federação>
+        <CodCuf>35</CodCuf>
+    </Item>
+    <Item>
+        <UF>PR</UF>
+        <Unidade-da-Federação>Paraná</Unidade-da-Federação>
+        <CodCuf>41</CodCuf>
+    </Item>
+    <Item>
+        <UF>SC</UF>
+        <Unidade-da-Federação>Santa Catarina</Unidade-da-Federação>
+        <CodCuf>42</CodCuf>
+    </Item>
+    <Item>
+        <UF>RS</UF>
+        <Unidade-da-Federação>Rio Grande do Sul</Unidade-da-Federação>
+        <CodCuf>43</CodCuf>
+    </Item>
+    <Item>
+        <UF>MS</UF>
+        <Unidade-da-Federação>Mato Grosso do Sul</Unidade-da-Federação>
+        <CodCuf>50</CodCuf>
+    </Item>
+    <Item>
+        <UF>MT</UF>
+        <Unidade-da-Federação>Mato Grosso</Unidade-da-Federação>
+        <CodCuf>51</CodCuf>
+    </Item>
+    <Item>
+        <UF>GO</UF>
+        <Unidade-da-Federação>Goiás</Unidade-da-Federação>
+        <CodCuf>52</CodCuf>
+    </Item>
+    <Item>
+        <UF>DF</UF>
+        <Unidade-da-Federação>Distrito Federal</Unidade-da-Federação>
+        <CodCuf>53</CodCuf>
+    </Item>
+</BaseCodCuf>
