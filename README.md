@@ -8,20 +8,20 @@
 |---|---|---|
 | natOp | 操作性质 | 例如：Venda de mercadoria |
 | mod | 模式 | 55表示电子发票 |
-| serie | 系列号 | 确保发票唯一性 |
+| serie | 系列号 | 发票的系列号，用于组织和管理目的，确保发票的唯一性。 |
 | nNF | 发票号码 | 电子发票号码 |
 | dhEmi | 开具日期时间 | 记录交易时间 |
-| dhSaiEnt | 发货/收货日期时间 | 跟踪货物流动 |
+| dhSaiEnt | 发货日期时间 | 跟踪货物流动 |
 | tpNF | 发票类型 | 0-entrada / 1-saída |
 | idDest | 目的地类型 | 1为洲内，2为洲际 |
-| cMunFG | 开票 municipality 代码 | 详见IBGE官网 |
+| cMunFG | 开票 municipality 代码 | [详见IBGE官网](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)。 |
 | tpImp | 打印类型 | 默认1 |
-| tpEmis | 发票发放模式 | 详见下文“发票发放模式”解释 |
+| tpEmis | 发票发放模式 | 详见下文“<strong>发票发放模式</strong>”解释 |
 | cDV | 发票号码校验码 | 用于验证发票号码完整性 |
-| tpAmb | 环境类型 | 1-生产环境，2-测试环境 |
+| tpAmb | 环境类型 | 1 = 生产环境（正式使用）；2 = 测试环境（验证/认证用途）。 |
 | finNFe | 发票类型 | 1-正常发票，2-补充发票，3-调整发票，4-商品退货发票 |
 | indFinal | 最终消费者标志 | 0-否，1-是 |
-| indPres | 现场交易标志 | 详见下文“现场交易标志”解释 |
+| indPres | 现场交易标志 | 详见下文“<strong>现场交易标志</strong>”解释 |
 | indIntermed | 中介运营标志 | 0-无中介运营 |
 | procEmi | 发行流程 | 详见下文“发行流程”解释 |
 | verProc | 平台版本 |  |
@@ -30,22 +30,22 @@
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| CNPJ | 纳税人识别号 |  |
-| xNome | 纳税人名称 |  |
-| xFant | 纳税人别名 |  |
-| xLgr | 公司街道名称 |  |
-| nro | 公司门牌号 |  |
-| xBairro | 公司街区名称 |  |
-| cMun | 公司城市代码 |  |
-| xMun | 公司城市名称 |  |
-| UF | 州/省代码 |  |
-| CEP | 邮政编码 |  |
-| cPais | 国家代码 | 详见BCB官网 |
-| xPais | 国家名称 |  |
-| fone | 联系电话 |  |
-| IE | 州注册号 |  |
+| CNPJ | 纳税人识别号 | Ex:46.377.222/0001-29 |
+| xNome | 纳税人名称 | Ex:Secretaria da Fazenda e Planejamento |
+| xFant | 纳税人别名 | Ex:SECRETARIA DA FAZENDA |
+| xLgr | 公司街道名称 | Ex:Avenida Rangel Pestana |
+| nro | 公司门牌号 | Ex:300 |
+| xBairro | 公司街区名称 | Ex:Se |
+| cMun | 公司市政代码 [详见IBGE 市政代码](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)| Ex:3550308 |
+| xMun | 公司城市名称 | Ex:São Paulo |
+| UF | 州/省代码 | Ex:SP |
+| CEP | 邮政编码 | Ex:01017-000 |
+| cPais | 国家代码 | 详见BCB官网 (https://www.barueri.sp.gov.br/nfe/Manuais/RPS_TabelaPaises.pdf)|
+| xPais | 国家名称 | Ex:Brasil |
+| fone | 联系电话 | Ex:(11) 3243-3285 |
+| IE | 州注册号 | |
 | IM | 市注册号 |  |
-| CNAE | 行业代码 |  |
+| CNAE | 行业代码 | Ex: |
 | CRT | 税收制度 | 详见下文“税收制度”解释 |
 
 ### 3. 购买方信息
@@ -173,15 +173,16 @@
 
 ### 发票发放模式
 
-| 代码 | 含义 |
-|---|---|
-| 1 | 正常发放 (非应急模式) |
-| 2 | 应急 FS-IA 模式 |
-| 3 | 应急 SCAN 模式 |
-| 4 | 应急 DPEC 模式 |
-| 5 | 应急 FS-DA 模式 |
-| 6 | 应急 SVC-AN 模式 |
-| 7 | 应急 SVC-RS 模式 |
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| 1 | 正常发放 (非应急模式) |  表示正常情况下的电子发票发放，不涉及任何应急或备用系统。 |
+| 2 | 应急 FS-IA 模式 |  使用安全表单打印 DANFE 在这种情况下，DANFE（电子发票辅助文件，用于代表 NF-e 的纸质文件）会打印在安全表单上。|
+| 3 | 应急 SCAN 模式（国家环境应急系统） | 使用 SCAN 系统发放发票，这是国家环境应急系统的一部分，在特定情况下启用。 |
+| 4 | 应急 DPEC 模式（预先声明的应急发放） | 在发票正式发放之前，以预先声明的形式提交数据。适用于没有即时在线传输能力的场景。  |
+| 5 | 应急 FS-DA 模式    | 使用安全表单打印 DANFE 类似于代码 2 的模式，但使用的是另一种安全表单类型 (FS-DA)。  |
+| 6 | 应急 SVC-AN 模式（国家应急虚拟 SEFAZ 系统） | 通过 SEFAZ（州财政秘书处）的虚拟应急系统 AN（国家环境）处理电子发票。 |
+| 7 | 应急 SVC-RS 模式（RS 州的虚拟应急 SEFAZ 系统） | 通过 SEFAZ 的虚拟应急系统 RS（南里奥格兰德州）处理电子发票。 |
+
 
 ### 现场交易标志
 
@@ -255,23 +256,15 @@
 
 ### 支付方式
 
-| 代码 | 含义 |
-|---|---|
-| 01 | 现金 |
-| 02 | 支票 |
-| 03 | 信用卡 |
-| 04 | 借记卡 |
-| 05 | 商店信用 |
-| 10 | 食品券 |
-| 11 | 餐饮券 |
-| 12 | 礼品卡 |
-| 13 | 燃料券 |
-| 99 | 其他 |
-
-## 参考资料
-
-* CFOP手册：https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/facilitacao/anexo-ecf-cfop
-* IBGE municipality code：https://www.ibge.gov.br/explica/codigos-dos-municipios.php
-* BCB country code：https://www.bcb.gov.br/rex/Censo2000/port/Manual/Pais.asp?frame=1
-
-请注意，以上内容仅供参考，具体定义和使用请以相关法律法规和标准为准。
+| 代码 | 含义           | 描述                                                                                     |
+|-------|----------------|------------------------------------------------------------------------------------------|
+| 01    | Dinheiro 现金    | 支付方式为现金。这意味着交易是通过现金支付完成的。                                                  |
+| 02    | Cheque 支票     | 支付方式为支票。客户使用支票进行支付。                                                            |
+| 03    | Cartão de Crédito 信用卡 | 支付方式为信用卡。客户通过信用卡支付货款。                                                       |
+| 04    | Cartão de Débito 借记卡 | 支付方式为借记卡。客户使用借记卡直接从银行账户中扣除资金支付。                                           |
+| 05    | Crédito Loja 商店信用 | 支付方式为商店提供的信用支付。这通常指商店自己提供的分期付款或信贷服务，客户可以在商店的信用账户上付款。                 |
+| 10    | Vale Alimentação 食品券 | 支付方式为食品券（通常是由雇主提供，用于购买食品）。这类支付方式通常用于雇员福利或补贴。                                   |
+| 11    | Vale Refeição 餐饮券   | 支付方式为餐饮券（通常由雇主提供，用于支付餐费）。这类支付方式常见于员工福利，允许员工在特定地点用券支付餐费。                   |
+| 12    | Vale Presente 礼品卡   | 支付方式为礼品卡（通常是预付卡）。客户使用商店或品牌的礼品卡进行支付，通常是为了购买商品或服务。                             |
+| 13    | Vale Combustível 燃料券 | 支付方式为燃料券（通常用于支付加油）。这种券通常由油站或公司提供，允许客户购买燃料。                                         |
+| 99    | Outros 其他      | 此选项表示使用了未在上述选项中列出的支付方式。可以用于各种特殊支付方式，如银行转账、数字钱包等。                                |
