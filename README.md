@@ -1,4 +1,11 @@
 # XML 电子发票 (NF-e)4.0版本
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+        <infNFe versao="4.00" Id="NFe00000000000000000000000000000000000000000000">
+        </infNFe>
+```
 ## 内容目录
 1. [XML标签字典](#xml标签字典)<br> 
 2. [发票发放模式](#发票发放模式)<br> 
