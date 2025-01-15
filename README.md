@@ -6,168 +6,168 @@
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| natOp | 操作性质 | 例如：Venda de mercadoria |
-| mod | 模式 | 55表示电子发票 |
-| serie | 系列号 | 发票的系列号，用于组织和管理目的，确保发票的唯一性。 |
-| nNF | 发票号码 | 电子发票号码 |
-| dhEmi | 开具日期时间 | 记录交易时间 |
-| dhSaiEnt | 发货日期时间 | 跟踪货物流动 |
-| tpNF | 发票类型 | 0-entrada / 1-saída |
-| idDest | 目的地类型 | 1为洲内，2为洲际 |
-| cMunFG | 开票 municipality 代码 | [详见IBGE官网](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)。 |
-| tpImp | 打印类型 | 默认1 |
-| tpEmis | 发票发放模式 | 详见下文“<strong>发票发放模式</strong>”解释 |
-| cDV | 发票号码校验码 | 用于验证发票号码完整性 |
-| tpAmb | 环境类型 | 1 = 生产环境（正式使用）；2 = 测试环境（验证/认证用途）。 |
-| finNFe | 发票类型 | 1-正常发票，2-补充发票，3-调整发票，4-商品退货发票 |
-| indFinal | 最终消费者标志 | 0-否，1-是 |
-| indPres | 现场交易标志 | 详见下文“<strong>现场交易标志</strong>”解释 |
-| indIntermed | 中介运营标志 | 0-无中介运营 |
-| procEmi | 发行流程 | 详见下文“发行流程”解释 |
-| verProc | 平台版本 |  |
+| `natOp` | 操作性质 | 例如：Venda de mercadoria |
+| `mod` | 模式 | 55表示电子发票 |
+| `serie` | 系列号 | 发票的系列号，用于组织和管理目的，确保发票的唯一性。 |
+| `nNF` | 发票号码 | 电子发票号码 |
+| `dhEmi` | 开具日期时间 | 记录交易时间 |
+| `dhSaiEnt` | 发货日期时间 | 跟踪货物流动 |
+| `tpNF` | 发票类型 | 0-entrada / 1-saída |
+| `idDest` | 目的地类型 | 1为洲内，2为洲际 |
+| `cMunFG` | 开票 municipality 代码 | [详见IBGE官网](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)。 |
+| `tpImp` | 打印类型 | 默认1 |
+| `tpEmis` | 发票发放模式 | 详见下文“<strong>发票发放模式</strong>”解释 |
+| `cDV` | 发票号码校验码 | 用于验证发票号码完整性 |
+| `tpAmb` | 环境类型 | 1 = 生产环境（正式使用）；2 = 测试环境（验证/认证用途）。 |
+| `finNFe` | 发票类型 | 1-正常发票，2-补充发票，3-调整发票，4-商品退货发票 |
+| `indFinal` | 最终消费者标志 | 0-否，1-是 |
+| `indPres` | 现场交易标志 | 详见下文“<strong>现场交易标志</strong>”解释 |
+| `indIntermed` | 中介运营标志 | 0-无中介运营 |
+| `procEmi` | 发行流程 | 详见下文“发行流程”解释 |
+| `verProc` | 平台版本 |  |
 
 ### 2. 纳税人信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| CNPJ | 纳税人识别号 | Ex:46.377.222/0001-29 |
-| xNome | 纳税人名称 | Ex:Secretaria da Fazenda e Planejamento |
-| xFant | 纳税人别名 | Ex:SECRETARIA DA FAZENDA |
-| xLgr | 公司街道名称 | Ex:Avenida Rangel Pestana |
-| nro | 公司门牌号 | Ex:300 |
-| xBairro | 公司街区名称 | Ex:Se |
-| cMun | 公司市政代码 [详见IBGE 市政代码](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)| Ex:3550308 |
-| xMun | 公司城市名称 | Ex:São Paulo |
-| UF | 州/省代码 | Ex:SP |
-| CEP | 邮政编码 | Ex:01017-000 |
-| cPais | 国家代码 | 详见BCB官网 (https://www.barueri.sp.gov.br/nfe/Manuais/RPS_TabelaPaises.pdf)|
-| xPais | 国家名称 | Ex:Brasil |
-| fone | 联系电话 | Ex:(11) 3243-3285 |
-| IE | 州注册号 | |
-| IM | 市注册号 |  |
-| CNAE | 行业代码 | Ex: |
-| CRT | 税收制度 | 详见下文“税收制度”解释 |
+| `CNPJ` | 纳税人识别号 | Ex:46.377.222/0001-29 |
+| `xNome` | 纳税人名称 | Ex:Secretaria da Fazenda e Planejamento |
+| `xFant` | 纳税人别名 | Ex:SECRETARIA DA FAZENDA |
+| `xLgr` | 公司街道名称 | Ex:Avenida Rangel Pestana |
+| `nro` | 公司门牌号 | Ex:300 |
+| `xBairro` | 公司街区名称 | Ex:Se |
+| `cMun` | 公司市政代码 [详见IBGE 市政代码](https://www.ibge.gov.br/explica/codigos-dos-municipios.php)| Ex:3550308 |
+| `xMun` | 公司城市名称 | Ex:São Paulo |
+| `UF` | 州/省代码 | Ex:SP |
+| `CEP` | 邮政编码 | Ex:01017-000 |
+| `cPais` | 国家代码 | 详见BCB官网 (https://www.barueri.sp.gov.br/nfe/Manuais/RPS_TabelaPaises.pdf)|
+| `xPais` | 国家名称 | Ex:Brasil |
+| `fone` | 联系电话 | Ex:(11) 3243-3285 |
+| `IE` | 州注册号 | |
+| `IM` | 市注册号 |  |
+| `CNAE` | 行业代码 | Ex: |
+| `CRT` | 税收制度 | 详见下文“税收制度”解释 |
 
 ### 3. 购买方信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| CNPJ | 购买方识别号 |  |
-| xNome | 购买方名称 |  |
-| xLgr | 购买方街道名称 |  |
-| nro | 购买方门牌号 |  |
-| xBairro | 购买方街区名称 |  |
-| cMun | 购买方城市代码 |  |
-| xMun | 购买方城市名称 |  |
-| UF | 州/省代码 |  |
-| CEP | 邮政编码 |  |
-| cPais | 国家代码 | 详见BCB官网 |
-| xPais | 国家名称 |  |
-| fone | 联系电话 |  |
-| indIEDest | 外国企业标志 | 详见下文“外国企业标志”解释 |
-| IE | 州注册号 |  |
+| `CNPJ` | 购买方识别号 |  |
+| `xNome` | 购买方名称 |  |
+| `xLgr` | 购买方街道名称 |  |
+| `nro` | 购买方门牌号 |  |
+| `xBairro` | 购买方街区名称 |  |
+| `cMun` | 购买方城市代码 |  |
+| `xMun` | 购买方城市名称 |  |
+| `UF` | 州/省代码 |  |
+| `CEP` | 邮政编码 |  |
+| `cPais` | 国家代码 | 详见BCB官网 |
+| `xPais` | 国家名称 |  |
+| `fone` | 联系电话 |  |
+| `indIEDest` | 外国企业标志 | 详见下文“外国企业标志”解释 |
+| `IE` | 州注册号 |  |
 
 ### 4. 商品信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| cProd | 商品代码 |  |
-| cEAN | 商品条码 |  |
-| xProd | 商品名称 |  |
-| NCM | 商品海关编码 |  |
-| CFOP | 商品税务编码 | 详见CFOP手册 |
-| uCom | 商品单位 |  |
-| qCom | 商品数量 |  |
-| vUnCom | 商品单价 |  |
-| vProd | 商品总价 |  |
-| cEANTrib | 商品GTIN代码 |  |
-| uTrib | 税务计算单位 |  |
-| qTrib | 税务计算数量 |  |
-| vUnTrib | 税务计算单价 |  |
-| vFrete | 运费 |  |
-| indTot | 总价包含标志 | 1-包含 |
-| orig | 商品原产地 | 详见下文“原产地标志”解释 |
-| modBC | 税基计算方式 | 详见下文“税基计算方式”解释 |
-| vBC | 税基金额 |  |
-| pICMS | ICMS税率 |  |
-| vICMS | ICMS税额 |  |
-| vBC | PIS税基金额 |  |
-| pPIS | PIS税率 |  |
-| vPIS | PIS税额 |  |
-| vBC | COFINS税基金额 |  |
-| pCOFINS | COFINS税率 |  |
-| vCOFINS | COFINS税额 |  |
-| infAdProd | 商品额外信息 |  |
+| `cProd` | 商品代码 |  |
+| `cEAN` | 商品条码 |  |
+| `xProd` | 商品名称 |  |
+| `NCM` | 商品海关编码 |  |
+| `CFOP` | 商品税务编码 | 详见CFOP手册 |
+| `uCom` | 商品单位 |  |
+| `qCom` | 商品数量 |  |
+| `vUnCom` | 商品单价 |  |
+| `vProd` | 商品总价 |  |
+| `cEANTrib` | 商品GTIN代码 |  |
+| `uTrib` | 税务计算单位 |  |
+| `qTrib` | 税务计算数量 |  |
+| `vUnTrib` | 税务计算单价 |  |
+| `vFrete` | 运费 |  |
+| `indTot` | 总价包含标志 | 1-包含 |
+| `orig` | 商品原产地 | 详见下文“原产地标志”解释 |
+| `modBC` | 税基计算方式 | 详见下文“税基计算方式”解释 |
+| `vBC` | 税基金额 |  |
+| `pICMS` | ICMS税率 |  |
+| `vICMS` | ICMS税额 |  |
+| `vBC` | PIS税基金额 |  |
+| `pPIS` | PIS税率 |  |
+| `vPIS` | PIS税额 |  |
+| `vBC` | COFINS税基金额 |  |
+| `pCOFINS` | COFINS税率 |  |
+| `vCOFINS` | COFINS税额 |  |
+| `infAdProd` | 商品额外信息 |  |
 
 ### 5. 税务信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| vBC | 税基金额 |  |
-| vICMS | ICMS税额 |  |
-| vICMSDeson | 免税额 |  |
-| vProd | 商品总价 |  |
-| vFrete | 运费 |  |
-| vSeg | 保险费 |  |
-| vDesc | 折扣 |  |
-| vII | 进口税 |  |
-| vIPI | IPI税额 |  |
-| vIPIDevol | IPI退款 |  |
-| vPIS | PIS税额 |  |
-| vCOFINS | COFINS税额 |  |
-| vOutro | 其他税额 |  |
-| vNF | 发票总价 |  |
-| vTotTrib | 总税额 |  |
+| `vBC` | 税基金额 |  |
+| `vICMS` | ICMS税额 |  |
+| `vICMSDeson` | 免税额 |  |
+| `vProd` | 商品总价 |  |
+| `vFrete` | 运费 |  |
+| `vSeg` | 保险费 |  |
+| `vDesc` | 折扣 |  |
+| `vII` | 进口税 |  |
+| `vIPI` | IPI税额 |  |
+| `vIPIDevol` | IPI退款 |  |
+| `vPIS` | PIS税额 |  |
+| `vCOFINS` | COFINS税额 |  |
+| `vOutro` | 其他税额 |  |
+| `vNF` | 发票总价 |  |
+| `vTotTrib` | 总税额 |  |
 
 ### 6. 运输信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| modFrete | 运输方式 | 详见下文“运输方式”解释 |
-| pesoL | 净重 |  |
-| pesoB | 毛重 |  |
+| `modFrete` | 运输方式 | 详见下文“运输方式”解释 |
+| `pesoL` | 净重 |  |
+| `pesoB` | 毛重 |  |
 
 ### 7. 付款信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| nFat | 付款号码 |  |
-| vOrig | 付款金额 |  |
-| vDesc | 折扣 |  |
-| vLiq | 付款净价 |  |
-| nDup | 付款次数 |  |
-| dVenc | 付款日期 |  |
-| vDup | 付款金额 |  |
-| tPag | 支付方式 | 详见下文“支付方式”解释 |
-| vPag | 付款金额 |  |
+| `nFat` | 付款号码 |  |
+| `vOrig` | 付款金额 |  |
+| `vDesc` | 折扣 |  |
+| `vLiq` | 付款净价 |  |
+| `nDup` | 付款次数 |  |
+| `dVenc` | 付款日期 |  |
+| `vDup` | 付款金额 |  |
+| `tPag` | 支付方式 | 详见下文“支付方式”解释 |
+| `vPag` | 付款金额 |  |
 
 ### 8. 技术支持信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| CNPJ | 技术支持公司识别号 |  |
-| xContato | 技术支持联系人 |  |
-| fone | 技术支持电话 |  |
+| `CNPJ` | 技术支持公司识别号 |  |
+| `xContato` | 技术支持联系人 |  |
+| `fone` | 技术支持电话 |  |
 
 ### 9. 签名信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| DigestValue | 摘要值 |  |
-| SignatureValue | 签名值 |  |
+| `DigestValue` | 摘要值 |  |
+| `SignatureValue` | 签名值 |  |
 
 ### 10. 协议信息
 
 | 字段名 | 含义 | 备注 |
 |---|---|---|
-| tpAmb | 环境类型 | 1-生产环境，2-测试环境 |
-| verAplic | 协议版本 |  |
-| chNFe | 协议编号 |  |
-| dhRecbto | 接收时间 |  |
-| nProt | 协议编号 |  |
-| digVal | 摘要值 |  |
-| cStat | 状态码 |  |
-| xMotivo | 状态信息 |  |
+| `tpAmb` | 环境类型 | 1-生产环境，2-测试环境 |
+| `verAplic` | 协议版本 |  |
+| `chNFe` | 协议编号 |  |
+| `dhRecbto` | 接收时间 |  |
+| `nProt` | 协议编号 |  |
+| `digVal` | 摘要值 |  |
+| `cStat` | 状态码 |  |
+| `xMotivo` | 状态信息 |  |
 
 ## 附录
 
