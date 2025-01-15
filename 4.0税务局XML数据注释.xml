@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
+    <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+        <infNFe versao="4.00" Id="NFe00000000000000000000000000000000000000000000">
+            <ide>
+                <cUF>35</cUF>
+                <cNF>07364721</cNF>
+                <natOp>Venda de mercadoria。</natOp><!-- 操作性质，表示交易的类型，可以直接标注Venda de mercadoria。 -->
+                <mod>55</mod> <!-- 模式，表示电子发票的类型，55表示电子发票。 -->
+                <serie>3</serie> <!-- 发票的系列号，用于组织和管理目的，确保发票的唯一性。 -->
+                <nNF>50</nNF> <!-- 发票号码，表示电子发票的号码。 -->
+                <dhEmi>2024-12-29T16:55:17-03:00</dhEmi> <!-- 发票开具的日期和时间，用于记录交易的时间。 -->
+                <dhSaiEnt>2024-12-29T16:55:17-03:00</dhSaiEnt> <!-- 货物发出或接收的日期和时间，用于跟踪货物的流动。 -->
+                <tpNF>1</tpNF> <!-- 发票类型用于区分进项 出项 0-entrada / 1-saída -->
+                <idDest>2</idDest> <!-- 1为洲内 2为洲际  -->
+                <cMunFG>3550308</cMunFG><!--  Código do Município de Faturamento https://www.ibge.gov.br/explica/codigos-dos-municipios.php -->
+                <tpImp>1</tpImp><!-- 默认1  -->
+                <tpEmis>1</tpEmis><!-- 1 = 正常发放 (非应急模式)
+                                    表示正常情况下的电子发票发放，不涉及任何应急或备用系统。
+                                    2 = 应急 FS-IA 模式，使用安全表单打印 DANFE
+                                    在这种情况下，DANFE（电子发票辅助文件，用于代表 NF-e 的纸质文件）会打印在安全表单上。
+                                    3 = 应急 SCAN 模式（国家环境应急系统）
+                                    使用 SCAN 系统发放发票，这是国家环境应急系统的一部分，在特定情况下启用。
+                                    4 = 应急 DPEC 模式（预先声明的应急发放）
+                                    在发票正式发放之前，以预先声明的形式提交数据。适用于没有即时在线传输能力的场景。
+                                    5 = 应急 FS-DA 模式，使用安全表单打印 DANFE
+                                    类似于代码 2 的模式，但使用的是另一种安全表单类型 (FS-DA)。
+                                    6 = 应急 SVC-AN 模式（国家应急虚拟 SEFAZ 系统）
+                                    通过 SEFAZ（州财政秘书处）的虚拟应急系统 AN（国家环境）处理电子发票。
+                                    7 = 应急 SVC-RS 模式（RS 州的虚拟应急 SEFAZ 系统）
+                                    通过 SEFAZ 的虚拟应急系统 RS（南里奥格兰德州）处理电子发票。
+                                    关键术语解释
+                                    DANFE: 是 NF-e 的纸质辅助文件，包含电子发票的主要信息，用于运输和存档。
+                                    SEFAZ: 各州的财政秘书处，负责管理税务系统。
+                                    Contingência (应急): 指在正常系统无法运行时，启用的备用方案或模式。
+                                    这些模式用于确保在正常环境发生故障或特殊情况下，税务发票的合法性和连续性。  -->
+                <cDV>0</cDV><!-- 验证发票号码完整性的 check digit  -->
+                <tpAmb>1</tpAmb><!-- 1 = 生产环境（正式使用）；2 = 测试环境（验证/认证用途）。 -->
+                <finNFe>1</finNFe><!-- 1 = 正常发票；2 = 补充发票；3 = 调整发票；4 = 商品退货发票。  -->
+                <indFinal>1</indFinal><!--0 = 正常操作； 1 = 最终消费者操作。   -->
+                <indPres>9</indPres><!--  是否在商店现场的指示标识： 0 = 不适用（例如补充发票或调整发票）； 1 = 现场交易； 2 = 非现场交易，通过互联网； 3 = 非现场交易，通过电话服务； 4 = NFC-e（电子消费者发票）在送货上门的情况下； 9 = 非现场交易，其他方式。 -->
+                <indIntermed>0</indIntermed><!-- 0=无中介运营  -->
+                <procEmi>0</procEmi><!-- 发行流程 0 = 由纳税人使用其应用程序发放电子发票； 1 = 由税务机关（Fisco）发放的临时电子发票； 2 = 由纳税人使用其数字证书通过税务机关网站发放的临时电子发票； 3 = 由纳税人使用税务机关提供的应用程序发放的电子发票。  -->
+                <verProc>Bling 1.0</verProc><!--  平台标 -->
+            </ide>
+            <emit>
+                <CNPJ>00000000000000</CNPJ><!-- 纳税人识别号 -->
+                <xNome>公司名称</xNome><!--  纳税公司名称 -->
+                <xFant>公司幻想名</xFant><!-- 纳税公司别名 -->
+                <enderEmit>
+                    <xLgr>公司街道名称</xLgr><!-- 公司街道名称 -->
+                    <nro>公司门牌号</nro><!-- 公司门牌号 -->
+                    <xBairro>公司街区名称</xBairro><!-- 公司街区名称 -->
+                    <cMun>3550308</cMun><!-- 公司城市代码 -->
+                    <xMun>Sao Paulo</xMun><!-- 公司城市名称 -->
+                    <UF>SP</UF><!-- 州/省代码 -->
+                    <CEP>00000-000</CEP><!-- 邮政编码 -->
+                    <cPais>1058</cPais><!-- 国家代码 https://www.bcb.gov.br/rex/Censo2000/port/Manual/Pais.asp?frame=1 -->
+                    <xPais>Brasil</xPais><!-- 国家名称 -->
+                    <fone>(xxxxxxxxxxx)</fone><!-- 联系电话 -->
+                </enderEmit>
+                <IE>000000000000</IE><!-- 纳税人洲注册号Inscrição Estadual -->
+                <IM>00000000</IM><!-- 纳税人州注册号Inscrição Municipal -->
+                <CNAE>0000000</CNAE><!-- 纳税人行业代码 -->
+                <CRT>3</CRT><!-- 1 = 简易税制（Simples Nacional）。 2 = 简易税制，超出收入上限（Simples Nacional, excesso sublimite de receita bruta）。 3 = 普通税制（Regime Normal）。 4 = 个体微型企业（Microempreendedor Individual，MEI） -->
+            </emit>
+            <dest>
+                <CNPJ>00000000000000</CNPJ><!-- 购买方纳税人识别号 -->
+                <xNome>购买方名称</xNome><!-- 购买方名称 -->
+                <enderDest>
+                    <xLgr>购买街道名称</xLgr><!-- 购买街道名称 -->
+                    <nro>购买门牌号</nro><!-- 购买门牌号 -->
+                    <xBairro>购买街区名称</xBairro><!-- 购买街区名称 -->
+                    <cMun>购买城市代码</cMun><!-- 购买城市代码 -->   
+                    <xMun>购买城市名称</xMun><!-- 购买城市名称 -->
+                    <UF>PR</UF><!-- 州/省代码 -->
+                    <CEP>00000000</CEP><!-- 邮政编码 -->
+                    <cPais>1058</cPais><!-- 国家代码 https://www.bcb.gov.br/rex/Censo2000/port/Manual/Pais.asp?frame=1 -->
+                    <xPais>Brasil</xPais><!-- 国家名称 -->
+                    <fone>xxxxxxxxxxx</fone><!-- 联系电话 -->
+                </enderDest>
+                <indIEDest>1</indIEDest> <!-- 1 = 购买方是外国企业，需要提供外国企业信息； 2 = 购买方是外国企业，不需要提供外国企业信息； 3 = 购买方是外国企业，需要提供外国企业信息，但未提供； 4 = 购买方是外国企业，不需要提供外国企业信息，但未提供。 -->
+                <IE>0000000000</IE><!-- 购买方洲注册号Inscrição Estadual -->
+            </dest>
+            <det nItem="1">
+                <prod>
+                    <cProd>00000000</cProd><!-- 商品代码 -->
+                    <cEAN>SEM GTIN</cEAN><!-- 商品条码 -->
+                    <xProd>商品名称</xProd><!-- 商品名称 -->
+                    <NCM>商品海关编码</NCM><!-- 商品海关编码 -->
+                    <CFOP>xxxx</CFOP><!-- 商品税务编码Código Fiscal de Operações e Prestações (CFOP) https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/facilitacao/anexo-ecf-cfop -->
+                    <uCom>PC</uCom><!-- 商品单位 -->
+                    <qCom>1.0000</qCom><!-- 商品数量 -->
+                    <vUnCom>1824.0000000000</vUnCom><!-- 商品单价 -->
+                    <vProd>1824.00</vProd><!-- 商品总价 -->
+                    <cEANTrib>SEM GTIN</cEANTrib><!-- 商品GTIN代码 -->
+                    <uTrib>PC</uTrib><!-- 商品单位用于税务计算 -->
+                    <qTrib>1.0000</qTrib><!-- 商品数量用于税务计算 -->
+                    <vUnTrib>1824.0000000000</vUnTrib><!-- 商品单价用于税务计算 -->
+                    <vFrete>24.03</vFrete><!-- 商品运费 -->
+                    <indTot>1</indTot><!-- 商品是否包含在总价中 1 = 包含在总价中 -->
+                </prod>
+                <imposto>
+                    <vTotTrib>667.14</vTotTrib>
+                    <ICMS>
+                        <ICMS00>
+                            <orig>1</orig><!-- 0 - Nacional, exceto as indicadas nos códigos 3, 4, 5 e 8 这是巴西国内生产的商品，除了在代码 3、4、5 和 8 中指定的商品。 1 - Estrangeira - Importação direta, exceto a indicada no código 6 这是直接进口的外国商品，但不包括在代码 6 中指定的商品。 2 - Estrangeira - Adquirida no mercado interno, exceto a indicada no código 7 这是在巴西国内市场购买的外国商品，但不包括在代码 7 中指定的商品。 3 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 40% e inferior ou igual a 70% 这是国内生产的商品，但其进口成分（例如，零部件或原材料）超过40%且不超过70%。 4 - Nacional, cuja produção tenha sido feita em conformidade com os processos produtivos básicos de que tratam as legislações citadas nos Ajustes 这是符合巴西生产基本流程和法规的国内商品。 5 - Nacional, mercadoria ou bem com Conteúdo de Importação inferior ou igual a 40% 这是国内生产的商品，其进口成分不超过40%。 6 - Estrangeira - Importação direta, sem similar nacional, constante em lista da CAMEX 这是直接进口的外国商品，且没有国内同类商品，且属于CAMEX（巴西外贸委员会）指定的清单。 7 - Estrangeira - Adquirida no mercado interno, sem similar nacional, constante em lista da CAMEX 这是在巴西国内市场购买的外国商品，且没有国内同类商品，且属于CAMEX的清单。 8 - Nacional, mercadoria ou bem com Conteúdo de Importação superior a 70% 这是国内生产的商品，但其进口成分超过70%。 -->
+                            <CST>00</CST>
+                            <modBC>3</modBC><!-- 0 = 0 - Valor da operação (Valor da Mercadoria (Valor da Operação)) 1 = 1 - Valor da base de cálculo (Valor da Mercadoria (Valor da Base de Cálculo)) 2 = 2 - Quantidade (Quantidade da Mercadoria (Quantidade)) 3 = 3 - Valor da operação (Valor da Mercadoria (Valor da Operação)) 4 = 4 - Valor da base de cálculo (Valor da Mercadoria (Valor da Base de Cálculo)) -->
+                            <vBC>1824.00</vBC><!-- 商品价值 -->
+                            <pICMS>4.0000</pICMS><!-- 商品税率 -->
+                            <vICMS>72.96</vICMS><!-- 商品税额 -->
+                        </ICMS00>
+                    </ICMS>
+                    <PIS>
+                        <PISAliq>
+                            <CST>01</CST>
+                            <vBC>1848.03</vBC><!-- PIS商品价值 -->
+                            <pPIS>1.65</pPIS><!-- 商品税率 -->
+                            <vPIS>30.49</vPIS><!-- 商品税额 -->
+                        </PISAliq>
+                    </PIS>
+                    <COFINS>
+                        <COFINSAliq>
+                            <CST>01</CST>
+                            <vBC>1848.03</vBC><!-- COFINS商品价值 -->
+                            <pCOFINS>7.60</pCOFINS><!-- COFINS商品税率 -->
+                            <vCOFINS>140.45</vCOFINS><!-- COFINS商品税额 -->
+                        </COFINSAliq>
+                    </COFINS>
+                </imposto>
+                <infAdProd>Null</infAdProd><!-- 商品额外信息 -->
+            </det>
+            <total>
+                <ICMSTot>
+                    <vBC>7590.00</vBC><!-- 商品价值 -->
+                    <vICMS>303.60</vICMS><!-- ICMS商品总税额 -->
+                    <vICMSDeson>0.00</vICMSDeson><!-- 商品免税额 -->
+                    <vFCP>0.00</vFCP>
+                    <vBCST>0.00</vBCST>
+                    <vST>0.00</vST>
+                    <vFCPST>0.00</vFCPST>
+                    <vFCPSTRet>0.00</vFCPSTRet>
+                    <vProd>7590.00</vProd><!-- 商品总价 -->
+                    <vFrete>100.00</vFrete><!-- 商品运费 -->
+                    <vSeg>0.00</vSeg><!-- 商品保险费 -->
+                    <vDesc>0.00</vDesc><!-- 商品折扣 -->
+                    <vII>0.00</vII><!-- 商品进口税 -->
+                    <vIPI>0.00</vIPI><!-- 商品IPI税 -->
+                    <vIPIDevol>0.00</vIPIDevol><!-- 商品IPI退款 -->
+                    <vPIS>126.88</vPIS><!-- PIS商品总税额 -->
+                    <vCOFINS>584.44</vCOFINS><!-- COFINS商品总税额 -->
+                    <vOutro>0.00</vOutro><!-- 其他税额 -->
+                    <vNF>7690.00</vNF><!-- 发票总价 -->
+                    <vTotTrib>2776.09</vTotTrib><!-- 发票总税额 -->
+                </ICMSTot>
+            </total>
+            <transp>
+                <modFrete>1</modFrete><!-- modFrete（运输方式）字段值： 0 = Por conta do emitente 费用由发货人承担，也就是说，发货人（通常是卖方）支付所有的运输费用。 1 = Por conta do destinatário/remetente 费用由收货人或发货人承担，这表示运输费用由收货人（买方）或发货人（卖方）来支付。这种情况通常发生在双方有协议时，或者买方要求自己承担运输费用。 2 = Por conta de terceiros 费用由第三方承担，即运输费用是由与发货人或收货人无关的第三方支付的。这可能是由外部物流公司或其他中介支付。 9 = Sem frete 没有运输费用，表示此交易没有涉及任何运输费用，可能是因为商品本身是免费的，或者没有实际运输。 -->
+                <vol>
+                    <pesoL>0.000</pesoL><!-- 商品净重 -->
+                    <pesoB>0.000</pesoB><!-- 商品毛重 -->
+                </vol>
+            </transp>
+            <cobr>
+                <fat>
+                    <nFat>000050</nFat><!-- 付款号码 -->
+                    <vOrig>7690.00</vOrig><!-- 付款金额 -->
+                    <vDesc>0</vDesc><!-- 折扣 -->
+                    <vLiq>7690.00</vLiq><!-- 付款净价 -->
+                </fat>
+                <dup>
+                    <nDup>001</nDup><!-- 付款次数 -->
+                    <dVenc>2024-12-29</dVenc><!-- 付款日期 -->
+                    <vDup>7690.00</vDup><!-- 付款金额 -->
+                </dup>
+            </cobr>
+            <pag>
+                <detPag>
+                    <indPag>0</indPag>
+                    <tPag>15</tPag><!-- tPag（支付方式）字段值： 01 = Dinheiro 现金：支付方式为现金。这意味着交易是通过现金支付完成的。 02 = Cheque 支票：支付方式为支票。客户使用支票进行支付。 03 = Cartão de Crédito 信用卡：支付方式为信用卡。客户通过信用卡支付货款。 04 = Cartão de Débito 借记卡：支付方式为借记卡。客户使用借记卡直接从银行账户中扣除资金支付。 05 = Crédito Loja 商店信用：支付方式为商店提供的信用支付。这通常指商店自己提供的分期付款或信贷服务，客户可以在商店的信用账户上付款。 10 = Vale Alimentação 食品券：支付方式为食品券（通常是由雇主提供，用于购买食品）。这类支付方式通常用于雇员福利或补贴。 11 = Vale Refeição 餐饮券：支付方式为餐饮券（通常由雇主提供，用于支付餐费）。这类支付方式常见于员工福利，允许员工在特定地点用券支付餐费。 12 = Vale Presente 礼品卡：支付方式为礼品卡（通常是预付卡）。客户使用商店或品牌的礼品卡进行支付，通常是为了购买商品或服务。 13 = Vale Combustível 燃料券：支付方式为燃料券（通常用于支付加油）。这种券通常由油站或公司提供，允许客户购买燃料。 99 = Outros 其他：此选项表示使用了未在上述选项中列出的支付方式。可以用于各种特殊支付方式，如银行转账、数字钱包等。 -->
+                    <vPag>7690.00</vPag><!-- 付款金额 -->
+                </detPag>
+            </pag>
+            <infAdic>
+                <infCpl>Total aproximado de tributos: R$ 2.776,09 (36,10%)  Federais R$ 1.391,89 (18,10%)  Estaduais R$ 1.384,20 (18,00%) . Fonte IBPT.</infCpl>
+            </infAdic>
+            <infRespTec><!-- 技术支持信息 -->
+                <CNPJ>00000000000000</CNPJ><!-- 技术支持公司CNPJ -->
+                <xContato>小白</xContato><!-- 技术支持联系人 -->
+                <!-- <email>xx@xx.com.br</email>技术支持邮箱 -->
+                <fone>11959258788</fone><!-- 技术支持电话 -->
+            </infRespTec>
+        </infNFe>
+        <Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><!-- 签名信息 -->
+            <SignedInfo>
+                <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><!-- 规范化方法 -->
+                <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><!-- 签名方法 -->
+                <Reference URI="#NFe35241237787243000121550030000000501073647210">
+                    <Transforms>
+                        <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><!-- 包装签名 -->
+                        <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><!-- 规范化方法 -->
+                    </Transforms>
+                    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><!-- 摘要方法 -->
+                    <DigestValue>A+47bp0z7llenc/Bmn2kjUTsYEo=</DigestValue><!-- 摘要值 -->
+                </Reference>
+            </SignedInfo>
+            <SignatureValue>FRZc6EkW9FaD8grRRQhwRfwaE2NtrjALB9wlagxkgW1jQZKeGIFqvtfe8HwPSBy3Y/6rfx4GEdT6GuAKz+EcmtpoHGdtos4VqK4jAEtuivgMrNZtoVZ6oEUP+U7aRwDe8kSnLgmHxLcjf66H3yztaFUyZJrW+UIwhsmxH+C/U7yG0lArV+q3FsjqxxHMPF1hNwFQy/jFxdfTGvxRsXrZLriQbNpneYkRTI7g0W3wx3e/1NtZaUb9LxCDg8MdyaKS57aaNS8+pGGG1L/5Cc1SbwHcOJO9ZeEW0SfoAiKofDJHjZLXYqGZOM4NWhyC+oAMkzP4BbCQ1YS2EUXQxF/wtw==</SignatureValue><!-- 签名值 -->
+            <KeyInfo>
+                <X509Data>
+                    <X509Certificate>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</X509Certificate>
+                </X509Data>
+            </KeyInfo>
+        </Signature>
+    </NFe>
+    <protNFe versao="4.00"><!-- 协议信息 -->
+        <infProt>
+            <tpAmb>1</tpAmb><!-- tpAmb（环境）字段值： 1 = Produção 生产环境：用于正式的商业交易。 2 = Homologação 测试环境：用于测试和开发阶段，不用于实际交易。 -->
+            <verAplic>SP_NFE_PL009_V4</verAplic><!-- 协议版本 -->
+            <chNFe>35241237787243000121550030000000501073647210</chNFe><!-- 协议编号 -->
+            <dhRecbto>2024-12-29T16:55:17-03:00</dhRecbto><!-- 接收时间 -->
+            <nProt>135243056043993</nProt><!-- 协议编号 -->
+            <digVal>A+47bp0z7llenc/Bmn2kjUTsYEo=</digVal><!-- 摘要值 -->
+            <cStat>100</cStat><!-- 状态码 -->
+            <xMotivo>Autorizado o uso da NF-e</xMotivo><!-- 状态信息 -->
+        </infProt>
+    </protNFe>  
+</nfeProc>
