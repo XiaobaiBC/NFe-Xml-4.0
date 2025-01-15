@@ -1,226 +1,277 @@
-# XML 制作指导文件
+## 电子发票指南文件优化
 
-在此指导文件中，我们将详细解释如何根据给定的 XML 结构创建和理解一个电子发票文件。我们将详细说明每个部分的功能及其内容，以确保在创建发票时可以正确理解每个标签的作用。
+本指南文件旨在提供电子发票相关字段的定义和解释，帮助用户正确生成和处理电子发票。
 
-## 1. 文件头部
+### 1. 发票基本信息
 
-XML 文件的开头包含了版本声明和命名空间信息，这些对于 XML 文件的解析至关重要。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| natOp | 操作性质 | 例如：Venda de mercadoria |
+| mod | 模式 | 55表示电子发票 |
+| serie | 系列号 | 确保发票唯一性 |
+| nNF | 发票号码 | 电子发票号码 |
+| dhEmi | 开具日期时间 | 记录交易时间 |
+| dhSaiEnt | 发货/收货日期时间 | 跟踪货物流动 |
+| tpNF | 发票类型 | 0-entrada / 1-saída |
+| idDest | 目的地类型 | 1为洲内，2为洲际 |
+| cMunFG | 开票 municipality 代码 | 详见IBGE官网 |
+| tpImp | 打印类型 | 默认1 |
+| tpEmis | 发票发放模式 | 详见下文“发票发放模式”解释 |
+| cDV | 发票号码校验码 | 用于验证发票号码完整性 |
+| tpAmb | 环境类型 | 1-生产环境，2-测试环境 |
+| finNFe | 发票类型 | 1-正常发票，2-补充发票，3-调整发票，4-商品退货发票 |
+| indFinal | 最终消费者标志 | 0-否，1-是 |
+| indPres | 现场交易标志 | 详见下文“现场交易标志”解释 |
+| indIntermed | 中介运营标志 | 0-无中介运营 |
+| procEmi | 发行流程 | 详见下文“发行流程”解释 |
+| verProc | 平台版本 |  |
 
-```xml
-<?xml version="1.0" encoding="UTF-8"?>
-<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">
-```
+### 2. 纳税人信息
 
-- `<?xml version="1.0" encoding="UTF-8"?>` 表示 XML 文件的版本和编码方式，通常保持不变。
-- `<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="4.00">` 定义了命名空间，确保文件遵循正确的 XML 标准，以及版本 `4.00`。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| CNPJ | 纳税人识别号 |  |
+| xNome | 纳税人名称 |  |
+| xFant | 纳税人别名 |  |
+| xLgr | 公司街道名称 |  |
+| nro | 公司门牌号 |  |
+| xBairro | 公司街区名称 |  |
+| cMun | 公司城市代码 |  |
+| xMun | 公司城市名称 |  |
+| UF | 州/省代码 |  |
+| CEP | 邮政编码 |  |
+| cPais | 国家代码 | 详见BCB官网 |
+| xPais | 国家名称 |  |
+| fone | 联系电话 |  |
+| IE | 州注册号 |  |
+| IM | 市注册号 |  |
+| CNAE | 行业代码 |  |
+| CRT | 税收制度 | 详见下文“税收制度”解释 |
 
-## 2. 发票信息 (`infNFe`)
+### 3. 购买方信息
 
-`infNFe` 标签包含了与发票相关的所有基本信息，它是 XML 文件的核心部分。通过理解每个元素的含义，可以确保发票文件的正确生成。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| CNPJ | 购买方识别号 |  |
+| xNome | 购买方名称 |  |
+| xLgr | 购买方街道名称 |  |
+| nro | 购买方门牌号 |  |
+| xBairro | 购买方街区名称 |  |
+| cMun | 购买方城市代码 |  |
+| xMun | 购买方城市名称 |  |
+| UF | 州/省代码 |  |
+| CEP | 邮政编码 |  |
+| cPais | 国家代码 | 详见BCB官网 |
+| xPais | 国家名称 |  |
+| fone | 联系电话 |  |
+| indIEDest | 外国企业标志 | 详见下文“外国企业标志”解释 |
+| IE | 州注册号 |  |
 
-### 2.1 基本信息
+### 4. 商品信息
 
-```xml
-<infNFe versao="4.00" Id="NFe00000000000000000000000000000000000000000000">
-    <ide>
-        <cUF>35</cUF>
-        <cNF>07364721</cNF>
-        <natOp>Venda de mercadoria</natOp>
-        <mod>55</mod>
-        <serie>3</serie>
-        <nNF>50</nNF>
-        <dhEmi>2024-12-29T16:55:17-03:00</dhEmi>
-        <dhSaiEnt>2024-12-29T16:55:17-03:00</dhSaiEnt>
-        <tpNF>1</tpNF>
-        <idDest>2</idDest>
-        <cMunFG>3550308</cMunFG>
-        <tpImp>1</tpImp>
-        <tpEmis>1</tpEmis>
-        <cDV>0</cDV>
-        <tpAmb>1</tpAmb>
-        <finNFe>1</finNFe>
-        <indFinal>1</indFinal>
-        <indPres>9</indPres>
-        <indIntermed>0</indIntermed>
-        <procEmi>0</procEmi>
-        <verProc>Bling 1.0</verProc>
-    </ide>
-</infNFe>
-```
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| cProd | 商品代码 |  |
+| cEAN | 商品条码 |  |
+| xProd | 商品名称 |  |
+| NCM | 商品海关编码 |  |
+| CFOP | 商品税务编码 | 详见CFOP手册 |
+| uCom | 商品单位 |  |
+| qCom | 商品数量 |  |
+| vUnCom | 商品单价 |  |
+| vProd | 商品总价 |  |
+| cEANTrib | 商品GTIN代码 |  |
+| uTrib | 税务计算单位 |  |
+| qTrib | 税务计算数量 |  |
+| vUnTrib | 税务计算单价 |  |
+| vFrete | 运费 |  |
+| indTot | 总价包含标志 | 1-包含 |
+| orig | 商品原产地 | 详见下文“原产地标志”解释 |
+| modBC | 税基计算方式 | 详见下文“税基计算方式”解释 |
+| vBC | 税基金额 |  |
+| pICMS | ICMS税率 |  |
+| vICMS | ICMS税额 |  |
+| vBC | PIS税基金额 |  |
+| pPIS | PIS税率 |  |
+| vPIS | PIS税额 |  |
+| vBC | COFINS税基金额 |  |
+| pCOFINS | COFINS税率 |  |
+| vCOFINS | COFINS税额 |  |
+| infAdProd | 商品额外信息 |  |
 
-- `cUF`: 发票所在的州代码（`35` 表示圣保罗州）。
-- `cNF`: 发票的唯一编号。
-- `natOp`: 交易的性质，`Venda de mercadoria` 表示商品销售。
-- `mod`: 电子发票的类型，`55` 表示电子发票。
-- `serie`: 发票的系列号，用于分类。
-- `nNF`: 发票的号码。
-- `dhEmi` 和 `dhSaiEnt`: 发票开具时间和货物发出时间。
-- `tpNF`: 发票类型（`1` 表示销售发票）。
-- `idDest`: 目的地指示，`2` 表示跨州交易。
+### 5. 税务信息
 
-### 2.2 发票发出方 (`emit`)
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| vBC | 税基金额 |  |
+| vICMS | ICMS税额 |  |
+| vICMSDeson | 免税额 |  |
+| vProd | 商品总价 |  |
+| vFrete | 运费 |  |
+| vSeg | 保险费 |  |
+| vDesc | 折扣 |  |
+| vII | 进口税 |  |
+| vIPI | IPI税额 |  |
+| vIPIDevol | IPI退款 |  |
+| vPIS | PIS税额 |  |
+| vCOFINS | COFINS税额 |  |
+| vOutro | 其他税额 |  |
+| vNF | 发票总价 |  |
+| vTotTrib | 总税额 |  |
 
-```xml
-<emit>
-    <CNPJ>00000000000000</CNPJ>
-    <xNome>公司名称</xNome>
-    <xFant>公司别名</xFant>
-    <enderEmit>
-        <xLgr>公司街道名称</xLgr>
-        <nro>公司门牌号</nro>
-        <xBairro>公司街区名称</xBairro>
-        <cMun>3550308</cMun>
-        <xMun>Sao Paulo</xMun>
-        <UF>SP</UF>
-        <CEP>00000-000</CEP>
-        <cPais>1058</cPais>
-        <xPais>Brasil</xPais>
-        <fone>(xxxxxxxxxxx)</fone>
-    </enderEmit>
-    <IE>000000000000</IE>
-    <IM>00000000</IM>
-    <CNAE>0000000</CNAE>
-    <CRT>3</CRT>
-</emit>
-```
+### 6. 运输信息
 
-- `<CNPJ>`: 发票开具方的企业注册号。
-- `<xNome>`: 企业的正式名称。
-- `<xFant>`: 企业的别名。
-- `<enderEmit>`: 企业的地址信息。
-- `<IE>`: 纳税人的州登记号（`Inscrição Estadual`）。
-- `<CRT>`: 税务注册类型，`3` 表示普通税制。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| modFrete | 运输方式 | 详见下文“运输方式”解释 |
+| pesoL | 净重 |  |
+| pesoB | 毛重 |  |
 
-### 2.3 发票接收方 (`dest`)
+### 7. 付款信息
 
-```xml
-<dest>
-    <CNPJ>00000000000000</CNPJ>
-    <xNome>购买方名称</xNome>
-    <enderDest>
-        <xLgr>购买街道名称</xLgr>
-        <nro>购买门牌号</nro>
-        <xBairro>购买街区名称</xBairro>
-        <cMun>购买城市代码</cMun>
-        <xMun>购买城市名称</xMun>
-        <UF>PR</UF>
-        <CEP>00000000</CEP>
-        <cPais>1058</cPais>
-        <xPais>Brasil</xPais>
-        <fone>xxxxxxxxxxx</fone>
-    </enderDest>
-    <indIEDest>1</indIEDest>
-    <IE>0000000000</IE>
-</dest>
-```
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| nFat | 付款号码 |  |
+| vOrig | 付款金额 |  |
+| vDesc | 折扣 |  |
+| vLiq | 付款净价 |  |
+| nDup | 付款次数 |  |
+| dVenc | 付款日期 |  |
+| vDup | 付款金额 |  |
+| tPag | 支付方式 | 详见下文“支付方式”解释 |
+| vPag | 付款金额 |  |
 
-- `<CNPJ>`: 发票接收方的企业注册号。
-- `<xNome>`: 发票接收方的名称。
-- `<enderDest>`: 发票接收方的地址信息。
-- `<indIEDest>`: 表示接收方是否为外国企业（`1` 表示是）。
+### 8. 技术支持信息
 
-### 2.4 商品详情 (`det`)
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| CNPJ | 技术支持公司识别号 |  |
+| xContato | 技术支持联系人 |  |
+| fone | 技术支持电话 |  |
 
-```xml
-<det nItem="1">
-    <prod>
-        <cProd>00000000</cProd>
-        <cEAN>SEM GTIN</cEAN>
-        <xProd>商品名称</xProd>
-        <NCM>商品海关编码</NCM>
-        <CFOP>xxxx</CFOP>
-        <uCom>PC</uCom>
-        <qCom>1.0000</qCom>
-        <vUnCom>1824.0000000000</vUnCom>
-        <vProd>1824.00</vProd>
-    </prod>
-    <imposto>
-        <vTotTrib>667.14</vTotTrib>
-        <ICMS>
-            <ICMS00>
-                <orig>1</orig>
-                <CST>00</CST>
-                <modBC>3</modBC>
-                <vBC>1824.00</vBC>
-                <pICMS>4.0000</pICMS>
-                <vICMS>72.96</vICMS>
-            </ICMS00>
-        </ICMS>
-    </imposto>
-</det>
-```
+### 9. 签名信息
 
-- `nItem`: 商品的序列号。
-- `cProd`: 商品代码。
-- `xProd`: 商品名称。
-- `NCM`: 商品的海关编码（用于国际贸易）。
-- `CFOP`: 商品的税务编码。
-- `qCom`: 商品数量。
-- `vUnCom`: 单价。
-- `vProd`: 总价。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| DigestValue | 摘要值 |  |
+| SignatureValue | 签名值 |  |
 
-### 2.5 税务信息 (`imposto`)
+### 10. 协议信息
 
-每个商品项都会包含税务信息，涵盖了增值税（ICMS）、社会贡献（PIS、COFINS）等税种。
+| 字段名 | 含义 | 备注 |
+|---|---|---|
+| tpAmb | 环境类型 | 1-生产环境，2-测试环境 |
+| verAplic | 协议版本 |  |
+| chNFe | 协议编号 |  |
+| dhRecbto | 接收时间 |  |
+| nProt | 协议编号 |  |
+| digVal | 摘要值 |  |
+| cStat | 状态码 |  |
+| xMotivo | 状态信息 |  |
 
-- `ICMS`: 增值税，包含税务基础值、税率以及税额。
-- `PIS` 和 `COFINS`: 社会贡献税，分别记录了相应的税务信息。
+## 附录
 
-## 3. 发票总计 (`total`)
+### 发票发放模式
 
-```xml
-<total>
-    <ICMSTot>
-        <vBC>7590.00</vBC>
-        <vICMS>303.60</vICMS>
-        <vProd>7590.00</vProd>
-        <vFrete>100.00</vFrete>
-        <vNF>7690.00</vNF>
-        <vTotTrib>2776.09</vTotTrib>
-    </ICMSTot>
-</total>
-```
+| 代码 | 含义 |
+|---|---|
+| 1 | 正常发放 (非应急模式) |
+| 2 | 应急 FS-IA 模式 |
+| 3 | 应急 SCAN 模式 |
+| 4 | 应急 DPEC 模式 |
+| 5 | 应急 FS-DA 模式 |
+| 6 | 应急 SVC-AN 模式 |
+| 7 | 应急 SVC-RS 模式 |
 
-- `vBC`: 商品的税务基础值。
-- `vICMS`: 增值税的总税额。
-- `vProd`: 商品总价。
-- `vFrete`: 运费。
-- `vNF`: 发票总额。
+### 现场交易标志
 
-## 4. 支付信息 (`pag`)
+| 代码 | 含义 |
+|---|---|
+| 0 | 不适用 |
+| 1 | 现场交易 |
+| 2 | 非现场交易，通过互联网 |
+| 3 | 非现场交易，通过电话服务 |
+| 4 | NFC-e 在送货上门的情况下 |
+| 9 | 非现场交易，其他方式 |
 
-```xml
-<pag>
-    <detPag>
-        <indPag>0</indPag>
-        <tPag>15</tPag>
-        <vPag>7690.00</vPag>
-    </detPag>
-</pag>
-```
+### 发行流程
 
-- `tPag`: 支付方式（例如，`15` 表示通过信用卡支付）。
-- `vPag`: 支付金额。
+| 代码 | 含义 |
+|---|---|
+| 0 | 纳税人使用其应用程序发放 |
+| 1 | 税务机关发放的临时电子发票 |
+| 2 | 纳税人使用其数字证书通过税务机关网站发放的临时电子发票 |
+| 3 | 纳税人使用税务机关提供的应用程序发放 |
 
-## 5. 附加信息和技术支持 (`infAdic`, `infRespTec`
+### 税收制度
 
-)
+| 代码 | 含义 |
+|---|---|
+| 1 | 简易税制（Simples Nacional） |
+| 2 | 简易税制，超出收入上限 |
+| 3 | 普通税制（Regime Normal） |
+| 4 | 个体微型企业（Microempreendedor Individual，MEI） |
 
-```xml
-<infAdic>
-    <infAdFisco>Informações adicionais para o fisco.</infAdFisco>
-</infAdic>
-<infRespTec>
-    <CNPJ>00000000000000</CNPJ>
-    <xContato>Suporte Técnico</xContato>
-    <email>contato@empresa.com</email>
-    <fone>(11) 1234-5678</fone>
-</infRespTec>
-```
+### 外国企业标志
 
-- `infAdic`: 附加信息，可以用于提供额外的备注。
-- `infRespTec`: 技术支持信息，通常用于提供系统相关的联系方式。
+| 代码 | 含义 |
+|---|---|
+| 1 | 需要提供外国企业信息 |
+| 2 | 不需要提供外国企业信息 |
+| 3 | 需要提供外国企业信息，但未提供 |
+| 4 | 不需要提供外国企业信息，但未提供 |
 
-## 结论
+### 原产地标志
 
-通过理解这些关键字段及其结构，您可以准确地生成符合要求的 NF-e XML 文件。这些字段包含了发票的基本信息、商品详情、税务计算、支付方式等内容，确保了电子发票的完整性与合规性。
+| 代码 | 含义 |
+|---|---|
+| 0 | 国产 |
+| 1 | 进口 |
+| 2 | 国产，含进口成分 |
+| 3 | 国产，含进口成分超过40% |
+| 4 | 国产，符合基本生产流程 |
+| 5 | 国产，含进口成分不超过40% |
+| 6 | 进口，无同类国产 |
+| 7 | 国产，含进口成分超过70% |
+
+### 税基计算方式
+
+| 代码 | 含义 |
+|---|---|
+| 0 | 价值 |
+| 1 | 税基 |
+| 2 | 数量 |
+| 3 | 价值 |
+| 4 | 税基 |
+
+### 运输方式
+
+| 代码 | 含义 |
+|---|---|
+| 0 | 发货人承担运费 |
+| 1 | 收货人承担运费 |
+| 2 | 第三方承担运费 |
+| 9 | 无运费 |
+
+### 支付方式
+
+| 代码 | 含义 |
+|---|---|
+| 01 | 现金 |
+| 02 | 支票 |
+| 03 | 信用卡 |
+| 04 | 借记卡 |
+| 05 | 商店信用 |
+| 10 | 食品券 |
+| 11 | 餐饮券 |
+| 12 | 礼品卡 |
+| 13 | 燃料券 |
+| 99 | 其他 |
+
+## 参考资料
+
+* CFOP手册：https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/facilitacao/anexo-ecf-cfop
+* IBGE municipality code：https://www.ibge.gov.br/explica/codigos-dos-municipios.php
+* BCB country code：https://www.bcb.gov.br/rex/Censo2000/port/Manual/Pais.asp?frame=1
+
+请注意，以上内容仅供参考，具体定义和使用请以相关法律法规和标准为准。
